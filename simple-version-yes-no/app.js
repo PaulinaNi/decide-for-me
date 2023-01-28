@@ -1,5 +1,6 @@
 const getAnswerBtn = document.querySelector('.getAnswer')
 const answerDiv = document.querySelector('.answer')
+const appText = document.querySelector('.appText')
 
 //random number generator from 1 to 7
 const getRandomNumber = () => {
@@ -24,39 +25,38 @@ const showAnswer = (text, style) => {
 const getAnswer = (number) => {
   switch (number) {
     case 1:
-      showAnswer('no', 'noAnswer')
-      console.log('answer 1: no')
+      showAnswer('No', 'noAnswer')
       break
     case 2:
-      showAnswer('hell no', 'noAnswer')
-      console.log('answer 2: hell no')
+      showAnswer('Hell No!', 'noAnswer')
       break
     case 3:
       showAnswer('No way!', 'noAnswer')
-      console.log('answer 3: No way!')
       break
     case 4:
-      showAnswer('yes', 'yesAnswer')
-      console.log('answer 4: yes')
+      showAnswer('Yes', 'yesAnswer')
       break
     case 5:
-      showAnswer('Absolutely!', 'yesAnswer')
-      console.log('answer 5: Absolutely!')
+      showAnswer('Absolutely!!!', 'yesAnswer')
       break
     case 6:
-      showAnswer('by all means!', 'yesAnswer')
-      console.log('answer 6: by all means!')
+      showAnswer('By all means!', 'yesAnswer')
       break
     case 7:
-      showAnswer('maybe tomorrow', 'maybeAnswer')
-      console.log('answer 7: maybe tomorrow')
+      showAnswer('Maybe Tomorrow', 'maybeAnswer')
       break
     default:
       console.log(`error - ${number}`)
   }
 }
 
+//change text in the appText
+const changeAppText = (text) => {
+  appText.textContent = text
+}
+
 //event listener for button to get answer 
 getAnswerBtn.addEventListener('click', () => {
   getAnswer(getRandomNumber())
+  changeAppText('Ask next question')
 })

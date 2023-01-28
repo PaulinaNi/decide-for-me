@@ -2,42 +2,87 @@
  box-sizing: border-box;
 }
 
-body {
- min-height: 100vh;
- background-color: aquamarine;
- display: flex;
- flex-direction: column;
- align-items: center;
+:root {
+ --tx-color: #CCE4FD;
+ --bg-color: #081C40;
+ /* --neon-color: #ffd60a; */
+ --neon-color: #d81159;
 }
+
+body {
+ background-color: var(--bg-color);
+ color: var(--tx-color);
+ font-family: 'Sofia Sans', sans-serif;
+ text-align: center;
+}
+
+header {
+ padding: 1rem 0;
+}
+
+/* App constainer styles */
 
 .appContainer {
- background-color: bisque;
+ margin: auto;
+ /* background-color: hsla(0, 0%, 100%, 0.1); */
  width: 80vw;
- display: flex;
- flex-direction: column;
- align-items: center;
- padding: 1rem;
- border-radius: 1rem;
- -webkit-box-shadow: 1rem 1rem 2rem 0rem rgba(0, 0, 0, 0.75);
- -moz-box-shadow: 1rem 1rem 2rem 0rem rgba(0, 0, 0, 0.75);
- box-shadow: 1rem 1rem 2rem 0rem rgba(0, 0, 0, 0.75);
+ padding: 3rem 1rem;
+ /* border-radius: 1rem;
+ -webkit-box-shadow: 1rem 1rem 2rem 0rem rgba(0 0 0 /0.75);
+ -moz-box-shadow: 1rem 1rem 2rem 0rem rgba(0 0 0 /0.75);
+ box-shadow: 1rem 1rem 2rem 0rem rgba(0 0 0 /0.75); */
 }
 
+.appContainer h2 {
+ margin: 0 0 2rem 0;
+ font-size: 2rem;
+ font-weight: 400;
+}
+
+/* Answers styles */
 .noAnswer,
 .yesAnswer,
 .maybeAnswer {
- padding: 1rem;
- margin-top: 1rem;
+ margin-top: 2rem;
+ font-size: 4rem;
+ width: 80vw;
+ padding: 3rem 1rem;
+ border-radius: 1rem;
+ -webkit-box-shadow: 1rem 1rem 2rem 0rem hsl(211 92% 90% / 0.3);
+ -moz-box-shadow: 1rem 1rem 2rem 0rem hsl(211 92% 90% / 0.3);
+ box-shadow: 1rem 1rem 2rem 0rem hsl(211 92% 90% / 0.3);
+ text-shadow: 0 0 1em rgb(255, 255, 255);
 }
 
 .noAnswer {
- background-color: red;
+ color: rgb(255, 0, 0);
+ background-color: rgba(255, 0, 0, 0.2);
 }
 
 .yesAnswer {
- background-color: green;
+ color: rgb(0, 255, 0);
+ background-color: rgba(0, 255, 0, 0.2);
 }
 
 .maybeAnswer {
- background-color: yellow;
+ color: rgb(255, 255, 0);
+ background-color: rgba(255, 255, 0, 0.2);
+}
+
+/* get answer button styles */
+.getAnswer {
+ font-size: 2rem;
+ font-weight: 800;
+ padding: 0.25em 1em;
+ cursor: pointer;
+ background-color: transparent;
+ color: var(--neon-color);
+ border: 0.1em solid var(--neon-color);
+ border-radius: 0.5em;
+
+ /* text neon effect */
+ text-shadow: 0 0 1em currentColor;
+
+ /* box neon effect */
+ box-shadow: inset 0 0 0.5em currentColor, 0 0 1em currentColor;
 }
